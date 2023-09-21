@@ -1,0 +1,24 @@
+<main class="all-products-container">
+  <div class="fitler-categories">
+    <h1>Categories</h1>
+    <select class="filter-select" (change)="filterCategory($event)">
+      <option value="all">all</option>
+      <option
+        class="filter-select-option"
+        *ngFor="let category of categories"
+        [value]="category"
+      >
+        {{ category }}
+      </option>
+    </select>
+  </div>
+  <div class="products" *ngIf="!isProductsLoading">
+    <app-product
+      *ngFor="let product of products"
+      [productData]="product"
+    ></app-product>
+  </div>
+  <div class="text-center" *ngIf="isProductsLoading">
+    <app-spinner></app-spinner>
+  </div>
+</main>

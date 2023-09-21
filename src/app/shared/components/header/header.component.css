@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .header {
+    @apply flex justify-around items-center py-5 bg-[#950b0b] text-white;
+  }
+  .logo {
+    @apply font-bold text-lg hover:cursor-pointer;
+  }
+}

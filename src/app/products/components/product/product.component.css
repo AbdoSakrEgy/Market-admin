@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.cart {
+  @apply flex flex-col border rounded-lg w-56 h-96 hover:scale-[1.03] transition duration-200 ease-in-out;
+}
+.cart-header {
+  @apply h-[55%] text-xs hover:cursor-pointer;
+}
+.cart-header img {
+  @apply h-[80%] m-auto p-3;
+}
+.cart-header h1 {
+  @apply p-3 h-[20%] bg-[#ddd];
+}
+.cart-body {
+  @apply p-3 h-[35%] text-xs hover:cursor-pointer;
+}
+.cart-body-description {
+  @apply text-xs overflow-hidden h-full;
+}
+.cart-footer {
+  @apply h-[10%] flex justify-between items-center p-3;
+}
+.btn-1 {
+  @apply rounded-md bg-green-400 text-white w-20 p-1;
+}
+.test1 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/*  */
+.cart-footer-input {
+  @apply border text-xs w-14 rounded-md outline-none p-1;
+}
+.btn-2 {
+  @apply rounded-md bg-green-400 text-white w-10 text-sm p-1;
+}

@@ -1,0 +1,26 @@
+<main class="cart">
+  <div class="cart-header" routerLink="/product-details">
+    <img [src]="productData.image" [alt]="productData.title" />
+    <h1 class="test1">{{ productData.title }}</h1>
+  </div>
+  <div class="cart-body" routerLink="/product-details">
+    <p class="cart-body-description">
+      {{ productData.description }}
+    </p>
+  </div>
+  <div class="cart-footer">
+    <button
+      type="button"
+      class="btn-1"
+      *ngIf="!showAmount"
+      (click)="showAmount = true"
+    >
+      Add
+    </button>
+    <section class="flex justify-between w-1/2" *ngIf="showAmount">
+      <input type="number" class="cart-footer-input" />
+      <button type="button" class="btn-2">Add</button>
+    </section>
+    <span>{{ productData.price }} EL</span>
+  </div>
+</main>
