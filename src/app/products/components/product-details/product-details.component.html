@@ -1,1 +1,12 @@
-<p>product-details works!</p>
+<main class="product-details-container">
+  <img [src]="productData.image" alt="img" *ngIf="!isLoading" />
+  <app-spinner *ngIf="isLoading"></app-spinner>
+  <div class="product-details-data">
+    <p><strong>Title :</strong>{{ productData.title }}</p>
+    <p><strong>Category :</strong>{{ productData.category }}</p>
+    <p><strong>Description :</strong>{{ productData.description }}</p>
+    <p><strong>Rate :</strong>{{ productData.rating?.rate }}</p>
+    <p><strong>Count :</strong>{{ productData.rating?.rate }}</p>
+    <p><strong>Price :</strong>{{ productData.price }}</p>
+  </div>
+</main>

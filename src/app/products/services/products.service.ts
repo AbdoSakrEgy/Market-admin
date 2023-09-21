@@ -19,4 +19,7 @@ export class ProductsService {
   getAllProducts() {
     return this.http.get(this.baseURL + 'products');
   }
+  getProductByID(id: any) {
+    return this.http.get(this.baseURL + 'products/' + id);
+  }
 }

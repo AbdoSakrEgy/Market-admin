@@ -1,9 +1,9 @@
 <main class="cart">
-  <div class="cart-header" routerLink="/product-details">
+  <div class="cart-header" [routerLink]="['/product-details', productData.id]">
     <img [src]="productData.image" [alt]="productData.title" />
     <h1 class="test1">{{ productData.title }}</h1>
   </div>
-  <div class="cart-body" routerLink="/product-details">
+  <div class="cart-body" [routerLink]="['/product-details', productData.id]">
     <p class="cart-body-description">
       {{ productData.description }}
     </p>

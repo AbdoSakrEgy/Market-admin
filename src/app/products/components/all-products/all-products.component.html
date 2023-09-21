@@ -12,13 +12,13 @@
       </option>
     </select>
   </div>
-  <div class="products" *ngIf="!isProductsLoading">
+  <div class="products" *ngIf="!isLoading">
     <app-product
       *ngFor="let product of products"
       [productData]="product"
     ></app-product>
   </div>
-  <div class="text-center" *ngIf="isProductsLoading">
+  <div class="text-center" *ngIf="isLoading">
     <app-spinner></app-spinner>
   </div>
 </main>

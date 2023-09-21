@@ -9,7 +9,7 @@ import { ProductsService } from '../../services/products.service';
 export class AllProductsComponent {
   categories: string[] = [];
   products: any[] = [];
-  isProductsLoading: boolean = true;
+  isLoading: boolean = true;
 
   constructor(private productsService: ProductsService) {}
   ngOnInit() {
@@ -17,14 +17,14 @@ export class AllProductsComponent {
     this.getAllProducts();
   }
   getAllCategories() {
-    this.isProductsLoading = true;
+    this.isLoading = true;
     this.productsService.getAllCategories().subscribe((res: any) => {
       this.categories = res;
-      this.isProductsLoading = false;
+      this.isLoading = false;
     });
   }
   filterCategory(event: any) {
-    this.isProductsLoading = true;
+    this.isLoading = true;
     if (event.target.value === 'all') {
       this.getAllProducts();
     } else {
@@ -32,15 +32,15 @@ export class AllProductsComponent {
         .filterCategory(event.target.value)
         .subscribe((res: any) => {
           this.products = res;
-          this.isProductsLoading = false;
+          this.isLoading = false;
         });
     }
   }
   getAllProducts() {
-    this.isProductsLoading = true;
+    this.isLoading = true;
     this.productsService.getAllProducts().subscribe((res: any) => {
       this.products = res;
-      this.isProductsLoading = false;
+      this.isLoading = false;
     });
   }
 }
