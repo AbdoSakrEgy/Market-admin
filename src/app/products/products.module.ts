@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AllProductsComponent } from './components/all-products/all-products.component';
@@ -13,7 +14,13 @@ import { AppRoutingModule } from '../app-routing.module';
     ProductDetailsComponent,
     ProductComponent,
   ],
-  imports: [CommonModule, HttpClientModule, SharedModule, AppRoutingModule],
+  imports: [
+    CommonModule,
+    HttpClientModule,
+    SharedModule,
+    AppRoutingModule,
+    FormsModule,
+  ],
   exports: [AllProductsComponent, ProductComponent, ProductDetailsComponent],
 })
 export class ProductsModule {}
