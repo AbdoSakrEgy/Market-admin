@@ -1,1 +1,24 @@
-<p>cart-details works!</p>
+<main class="cart-container">
+  <div class="cart-header">Cart details</div>
+  <table>
+    <tr>
+      <th></th>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Quantity</th>
+      <th>Total</th>
+    </tr>
+    <tr *ngFor="let product of cartProducts; let index = index">
+      <td>
+        <div class="product-img-container">
+          <img [src]="product.image" alt="img" class="product-img" />
+        </div>
+      </td>
+      <td>{{ product.title }}</td>
+      <td>{{ product.price }}</td>
+      <td>{{ cartProductsQuantity[index] }}</td>
+      <td>{{ product.price * cartProductsQuantity[index] }}</td>
+    </tr>
+  </table>
+  <div class="text-right">Total : {{totalPrice}} $</div>
+</main>

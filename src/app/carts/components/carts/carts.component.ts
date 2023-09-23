@@ -3,11 +3,11 @@ import { CartsService } from '../../services/carts.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
-  selector: 'app-cart',
-  templateUrl: './cart.component.html',
-  styleUrls: ['./cart.component.css'],
+  selector: 'app-carts',
+  templateUrl: './carts.component.html',
+  styleUrls: ['./carts.component.css'],
 })
-export class CartComponent {
+export class CartsComponent {
   carts: any[] = [];
   formDate!: FormGroup;
   isLoading: boolean = false;

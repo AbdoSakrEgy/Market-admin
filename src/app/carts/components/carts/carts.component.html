@@ -26,7 +26,12 @@
           <button class="cart-body-delete" (click)="deleteCart(obj.id)">
             Delete
           </button>
-          <button class="cart-body-view">View</button>
+          <button
+            class="cart-body-view"
+            [routerLink]="['/carts/cart-details/', obj.id]"
+          >
+            View
+          </button>
         </td>
       </tr>
     </table>

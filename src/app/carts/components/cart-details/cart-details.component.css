@@ -1,0 +1,23 @@
+.cart-container {
+  @apply my-5 mx-20;
+}
+.cart-header {
+  @apply text-3xl font-bold text-[#950b0b];
+}
+/* ======================== table ======================== */
+table {
+  @apply w-full text-left my-10;
+}
+table th,
+td {
+  @apply border-b py-3;
+}
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+.product-img-container {
+  @apply w-20 h-20 rounded-full overflow-hidden p-3 bg-white;
+}
+.product-img {
+  @apply w-full h-full object-contain;
+}

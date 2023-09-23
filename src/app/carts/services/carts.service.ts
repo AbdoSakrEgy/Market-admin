@@ -17,7 +17,13 @@ export class CartsService {
       .set('enddate', dateObj.endDate);
     return this.http.get(this.baseURL + 'carts', { params });
   }
-  deleteCart(cartID: any) {
+  deleteCart(cartID: number) {
     return this.http.delete(this.baseURL + 'carts/' + cartID);
+  }
+  getSingleCart(cartID: any) {
+    return this.http.get(this.baseURL + 'carts/' + cartID);
+  }
+  getProduct(productID: any) {
+    return this.http.get(this.baseURL + 'products/' + productID);
   }
 }
