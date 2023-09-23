@@ -12,7 +12,7 @@
   @apply border rounded-md px-3 py-2 outline-none mt-3 hover:cursor-pointer;
 }
 .filter-select-option {
-  @apply hover:cursor-pointer;
+  /* @apply hover:cursor-pointer; */
 }
 .products {
   @apply flex justify-between flex-wrap gap-10;

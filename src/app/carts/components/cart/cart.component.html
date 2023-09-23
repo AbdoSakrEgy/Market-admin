@@ -1,55 +1,37 @@
 <main class="carts-container">
-  <h1>Shopping cart</h1>
-  <div class="cart-header">
-    <p>
-      You have <span class="text-[#950b0b]">{{ numOfItemsInCart }}</span> items
-      in your cart
-    </p>
-    <button (click)="clearCart()">Clear shopping cart</button>
-  </div>
-  <div class="cart-body">
+  <form class="range-date" [formGroup]="formDate">
+    <section>
+      <p>Start date</p>
+      <input type="date" formControlName="startDate" />
+    </section>
+    <section>
+      <p>Start date</p>
+      <input type="date" formControlName="endDate" />
+    </section>
+    <button class="cart-body-Apply" (click)="filterCartsByDate()">Apply</button>
+  </form>
+  <div>
     <table>
       <tr>
-        <th></th>
-        <th>Name</th>
-        <th>Price</th>
+        <th>Date</th>
         <th>Quantity</th>
-        <th>Total</th>
         <th></th>
       </tr>
-      <tr *ngFor="let obj of cart; let index = index">
+      <tr *ngFor="let obj of carts; let index = index">
+        <td>{{ obj.date | date : "shortDate" }}</td>
         <td>
-          <div class="table-image-container">
-            <img [src]="obj.product.image" alt="img" class="table-image" />
-          </div>
+          {{ obj.products.length }}
         </td>
-        <td>{{ obj.product.title }}</td>
-        <td>{{ obj.product.price }}</td>
         <td>
-          <section class="cart-body-quantity">
-            <button (click)="incQuantity(index)">+</button>
-            <input
-              type="number"
-              [(ngModel)]="obj.quantity"
-              (change)="changeQuantity()"
-            />
-            <button (click)="decQuantity(index)">-</button>
-          </section>
-        </td>
-        <td>{{ obj.product.price * obj.quantity }}</td>
-        <td>
-          <button class="cart-body-delete" (click)="deleteProductInCart(index)">
+          <button class="cart-body-delete" (click)="deleteCart(obj.id)">
             Delete
           </button>
+          <button class="cart-body-view">View</button>
         </td>
       </tr>
     </table>
-  </div>
-  <div class="cart-footer">
-    <p>Total : {{ totalPrice }} LE</p>
-    <button (click)="orderProducts()">Order now</button>
-  </div>
-  <div class="notification" *ngIf="isOrderSuccess">
-    <strong>Well done!</strong> your order is successfully send
+    <div class="flex justify-center">
+      <app-spinner *ngIf="isLoading"></app-spinner>
+    </div>
   </div>
 </main>
