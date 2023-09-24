@@ -21,8 +21,8 @@ select {
 textarea {
   @apply border px-3 py-1 rounded-md outline-none w-full h-36 resize-none;
 }
-.modalForm-data img{
-  @apply object-contain
+.modalForm-data img {
+  @apply object-contain;
 }
 /* ======================== table ======================== */
 table {
@@ -40,4 +40,11 @@ tr:nth-child(even) {
 }
 .product-img {
   @apply w-full h-full object-contain;
+}
+
+.btn-showUpdateForm {
+  @apply rounded-md px-2 py-1 mx-5 font-medium bg-yellow-500;
+}
+.btn-updateProduct {
+  @apply rounded-md p-2 font-semibold text-xl bg-yellow-500 text-white;
 }

@@ -14,6 +14,8 @@ export class ProductsComponent {
   productForm!: FormGroup;
   isProductFormHidden: boolean = true;
   isLoading: boolean = false;
+  isUpdateForm: boolean = false;
+  selectedProductID!: number;
 
   constructor(
     private productsService: ProductsService,
@@ -58,6 +60,35 @@ export class ProductsComponent {
       this.productForm.reset();
       this.base64 = '';
       this.isProductFormHidden = true;
+    });
+  }
+  showUpdateForm(product: any) {
+    this.isUpdateForm = true;
+    this.isProductFormHidden = false;
+    this.selectedProductID = product.id;
+    this.productForm.get('title')?.setValue(product.title);
+    this.productForm.get('price')?.setValue(product.price);
+    this.productForm.get('description')?.setValue(product.description);
+    this.productForm.get('image')?.setValue(product.image);
+    this.base64 = product.image;
+    this.productForm.get('category')?.setValue(product.category);
+  }
+  updateProduct() {
+    const id = this.selectedProductID;
+    const title = this.productForm.get('title')?.value;
+    const price = this.productForm.get('price')?.value;
+    const description = this.productForm.get('description')?.value;
+    const image = this.productForm.get('image')?.value;
+    const category = this.productForm.get('category')?.value;
+    const model = {
+      title: title,
+      price: price,
+      description: description,
+      image: image,
+      category: category,
+    };
+    this.productsService.updateProduct(model, id).subscribe((res) => {
+      alert('The product has been updated successfully');
     });
   }
 }

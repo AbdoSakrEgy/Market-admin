@@ -26,13 +26,7 @@ export class ProductsService {
   createProduct(model: any) {
     return this.http.post(this.baseURL + 'products', model);
   }
-  addProductToCart(addedProduct: any, addedQuantity: any) {
-    // if ('cart' in localStorage) {
-    //   this.cart = JSON.parse(localStorage.getItem('cart'));
-    //   this.cart.push({ product: addedProduct, quantity: addedQuantity });
-    //   localStorage.setItem('cart', JSON.stringify(this.cart));
-    // } else {
-    // }
-    return this.cart;
+  updateProduct(model: any, id: number) {
+    return this.http.put(this.baseURL + 'products/' + id, model);
   }
 }

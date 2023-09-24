@@ -64,8 +64,18 @@
       class="btn-addProduct"
       (click)="createProduct()"
       [disabled]="!productForm.valid"
+      *ngIf="!isUpdateForm"
     >
       Add product
+    </button>
+    <button
+      type="submit"
+      class="btn-updateProduct"
+      (click)="updateProduct()"
+      [disabled]="!productForm.valid"
+      *ngIf="isUpdateForm"
+    >
+      Update product
     </button>
   </form>
   <table>
@@ -74,6 +84,7 @@
       <th>Name</th>
       <th>Category</th>
       <th>Price</th>
+      <th></th>
     </tr>
     <tr *ngFor="let product of products">
       <td>
@@ -84,6 +95,15 @@
       <td>{{ product.title }}</td>
       <td>{{ product.category }}</td>
       <td>{{ product.price }}</td>
+      <td>
+        <button
+          type="button"
+          class="btn-showUpdateForm"
+          (click)="showUpdateForm(product)"
+        >
+          Update
+        </button>
+      </td>
     </tr>
   </table>
   <div class="text-center" *ngIf="isLoading"><app-spinner></app-spinner></div>
