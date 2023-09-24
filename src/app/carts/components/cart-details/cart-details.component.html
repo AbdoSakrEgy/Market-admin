@@ -20,5 +20,6 @@
       <td>{{ product.price * cartProductsQuantity[index] }}</td>
     </tr>
   </table>
-  <div class="text-right">Total : {{totalPrice}} $</div>
+  <div class="text-center" *ngIf="isLoading"><app-spinner></app-spinner></div>
+  <div class="text-right">Total : {{ totalPrice }} $</div>
 </main>

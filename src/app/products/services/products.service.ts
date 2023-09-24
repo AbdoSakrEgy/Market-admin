@@ -23,6 +23,9 @@ export class ProductsService {
   getProductByID(id: any) {
     return this.http.get(this.baseURL + 'products/' + id);
   }
+  createProduct(model: any) {
+    return this.http.post(this.baseURL + 'products', model);
+  }
   addProductToCart(addedProduct: any, addedQuantity: any) {
     // if ('cart' in localStorage) {
     //   this.cart = JSON.parse(localStorage.getItem('cart'));

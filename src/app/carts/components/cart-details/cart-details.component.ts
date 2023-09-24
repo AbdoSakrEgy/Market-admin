@@ -13,6 +13,7 @@ export class CartDetailsComponent {
   cartProductsQuantity: any[] = [];
   cartProducts: any[] = [];
   totalPrice: number = 0;
+  isLoading: boolean = false;
 
   constructor(
     private cartsService: CartsService,
@@ -22,6 +23,7 @@ export class CartDetailsComponent {
     this.getCartInfo();
   }
   getCartInfo() {
+    this.isLoading = true;
     this.cartProductsIDs = [];
     this.cartsService.getSingleCart(this.cartID).subscribe((res: any) => {
       for (let i = 0; i < res.products.length; i++) {
@@ -37,6 +39,7 @@ export class CartDetailsComponent {
       this.cartsService.getProduct(this.cartProductsIDs[i]).subscribe((res) => {
         this.cartProducts.push(res);
         this.getTotalPrice();
+        this.isLoading = false;
       });
     }
   }

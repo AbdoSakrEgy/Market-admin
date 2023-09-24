@@ -1,0 +1,90 @@
+<main class="cart-container">
+  <button
+    type="button"
+    class="btn-addProduct"
+    *ngIf="isProductFormHidden"
+    (click)="isProductFormHidden = false"
+  >
+    Add product
+  </button>
+  <form
+    class="modalForm"
+    [formGroup]="productForm"
+    *ngIf="!isProductFormHidden"
+  >
+    <section class="modalForm-data">
+      <label for="title">Title</label><br />
+      <input
+        type="text"
+        id="title"
+        placeholder="title"
+        formControlName="title"
+      />
+    </section>
+    <section class="modalForm-data">
+      <label for="price">Price</label><br />
+      <input
+        type="number"
+        id="price"
+        placeholder="price"
+        formControlName="price"
+      />
+    </section>
+    <section class="modalForm-data">
+      <label for="category">Category</label><br />
+      <select id="category" formControlName="category">
+        <option *ngFor="let category of categories" [value]="category">
+          {{ category }}
+        </option>
+      </select>
+    </section>
+
+    <section class="modalForm-data">
+      <label for="image">Image</label><br />
+      <img
+        src="{{ base64 }}"
+        alt=""
+        class="h-20 w-full object-cover"
+        *ngIf="base64"
+      />
+      <input
+        type="file"
+        id="image"
+        placeholder="image"
+        (change)="getImagePath($event)"
+      />
+    </section>
+    <section class="modalForm-data">
+      <label for="description">Description</label><br />
+      <textarea id="description" formControlName="description"></textarea>
+    </section>
+
+    <button
+      type="submit"
+      class="btn-addProduct"
+      (click)="createProduct()"
+      [disabled]="!productForm.valid"
+    >
+      Add product
+    </button>
+  </form>
+  <table>
+    <tr>
+      <th></th>
+      <th>Name</th>
+      <th>Category</th>
+      <th>Price</th>
+    </tr>
+    <tr *ngFor="let product of products">
+      <td>
+        <div class="product-img-container">
+          <img [src]="product.image" alt="img" class="product-img" />
+        </div>
+      </td>
+      <td>{{ product.title }}</td>
+      <td>{{ product.category }}</td>
+      <td>{{ product.price }}</td>
+    </tr>
+  </table>
+  <div class="text-center" *ngIf="isLoading"><app-spinner></app-spinner></div>
+</main>
