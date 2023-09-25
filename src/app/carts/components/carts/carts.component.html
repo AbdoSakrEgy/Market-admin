@@ -10,7 +10,7 @@
     </section>
     <button class="cart-body-Apply" (click)="filterCartsByDate()">Apply</button>
   </form>
-  <div>
+  <div class="table-container">
     <table>
       <tr>
         <th>Date</th>
@@ -23,15 +23,17 @@
           {{ obj.products.length }}
         </td>
         <td>
-          <button class="cart-body-delete" (click)="deleteCart(obj.id)">
-            Delete
-          </button>
-          <button
-            class="cart-body-view"
-            [routerLink]="['/carts/cart-details/', obj.id]"
-          >
-            View
-          </button>
+          <div class="btn-container">
+            <button class="cart-body-delete" (click)="deleteCart(obj.id)">
+              Delete
+            </button>
+            <button
+              class="cart-body-view"
+              [routerLink]="['/carts/cart-details/', obj.id]"
+            >
+              View
+            </button>
+          </div>
         </td>
       </tr>
     </table>

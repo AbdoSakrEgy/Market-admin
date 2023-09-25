@@ -1,8 +1,5 @@
-.cart-container {
-  @apply my-14 mx-20;
-}
-.cart-header {
-  @apply text-3xl font-bold text-[#950b0b];
+.carts-container {
+  @apply my-14 mx-5 md:mx-20;
 }
 /* ======================== modal ======================== */
 .btn-addProduct {

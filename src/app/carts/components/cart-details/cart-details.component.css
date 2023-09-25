@@ -1,5 +1,5 @@
 .cart-container {
-  @apply my-5 mx-20;
+  @apply my-5 mx-5 md:mx-20;
 }
 .cart-header {
   @apply text-3xl font-bold text-[#950b0b];

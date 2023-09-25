@@ -1,4 +1,4 @@
-<main class="cart-container">
+<main class="carts-container">
   <button
     type="button"
     class="btn-addProduct"
@@ -78,33 +78,35 @@
       Update product
     </button>
   </form>
-  <table>
-    <tr>
-      <th></th>
-      <th>Name</th>
-      <th>Category</th>
-      <th>Price</th>
-      <th></th>
-    </tr>
-    <tr *ngFor="let product of products">
-      <td>
-        <div class="product-img-container">
-          <img [src]="product.image" alt="img" class="product-img" />
-        </div>
-      </td>
-      <td>{{ product.title }}</td>
-      <td>{{ product.category }}</td>
-      <td>{{ product.price }}</td>
-      <td>
-        <button
-          type="button"
-          class="btn-showUpdateForm"
-          (click)="showUpdateForm(product)"
-        >
-          Update
-        </button>
-      </td>
-    </tr>
-  </table>
+  <div class="overflow-auto">
+    <table>
+      <tr>
+        <th></th>
+        <th>Name</th>
+        <th>Category</th>
+        <th>Price</th>
+        <th></th>
+      </tr>
+      <tr *ngFor="let product of products">
+        <td>
+          <div class="product-img-container">
+            <img [src]="product.image" alt="img" class="product-img" />
+          </div>
+        </td>
+        <td>{{ product.title }}</td>
+        <td>{{ product.category }}</td>
+        <td>{{ product.price }}</td>
+        <td>
+          <button
+            type="button"
+            class="btn-showUpdateForm"
+            (click)="showUpdateForm(product)"
+          >
+            Update
+          </button>
+        </td>
+      </tr>
+    </table>
+  </div>
   <div class="text-center" *ngIf="isLoading"><app-spinner></app-spinner></div>
 </main>

@@ -1,31 +1,36 @@
 .carts-container {
-  @apply my-5 mx-20;
+  @apply my-5 mx-5 md:mx-20;
 }
 /* ======================== body ======================== */
+.table-container {
+  @apply overflow-auto;
+}
 table {
-  @apply w-full text-left my-10;
+  @apply w-full text-center my-10;
 }
 table th,
 td {
-  @apply border-b py-3;
+  @apply border-b p-3;
 }
 tr:nth-child(even) {
   background-color: #f2f2f2;
 }
-.cart-body-delete {
+.btn-container {
+  @apply flex justify-center items-center;
+}
+.btn-container .cart-body-delete {
   @apply rounded-md bg-red-500 text-white px-2 py-1 mr-3;
 }
-.cart-body-view {
+.btn-container .cart-body-view {
   @apply rounded-md bg-blue-500 text-white px-2 py-1;
 }
 /*  */
 .range-date {
-  @apply flex justify-start items-end gap-5 border-b pb-5;
+  @apply flex flex-wrap justify-start items-end gap-5 border-b pb-5;
 }
-.range-date input{
+.range-date input {
   @apply border rounded-md h-7 px-3 mt-5 text-gray-400;
 }
 .cart-body-Apply {
   @apply rounded-md bg-green-500 text-white h-7 px-3;
 }
-
