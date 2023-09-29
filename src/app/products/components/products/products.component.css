@@ -1,47 +1,31 @@
-.carts-container {
-  @apply my-14 mx-5 md:mx-20;
-}
-/* ======================== modal ======================== */
-.btn-addProduct {
-  @apply rounded-md p-2 font-semibold text-xl bg-green-500 text-white;
-}
-.modalForm {
-  @apply flex flex-col flex-wrap gap-5 border-2 border-[#950b0b] p-5;
-}
-.modalForm-sec {
-  @apply md:flex flex-col justify-between gap-5 flex-wrap mb-10;
-}
-.modalForm-data input,
-select {
-  @apply border px-3 py-1 rounded-md outline-none w-full;
-}
-textarea {
-  @apply border px-3 py-1 rounded-md outline-none w-full h-36 resize-none;
-}
-.modalForm-data img {
-  @apply object-contain;
-}
-/* ======================== table ======================== */
-table {
-  @apply w-full text-center my-10;
-}
-table th,
-td {
-  @apply border-y py-3;
-}
-tr:nth-child(even) {
-  background-color: #f2f2f2;
-}
-.product-img-container {
-  @apply w-20 h-20 rounded-full overflow-hidden p-3 bg-white;
-}
-.product-img {
-  @apply w-full h-full object-contain;
-}
-
-.btn-showUpdateForm {
-  @apply rounded-md px-2 py-1 mx-5 font-medium bg-yellow-500;
-}
-.btn-updateProduct {
-  @apply rounded-md p-2 font-semibold text-xl bg-yellow-500 text-white;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer components {
+  .btn-addProduct {
+    @apply rounded-md p-2 font-medium text-xl bg-green-500 text-white;
+  }
+  /* ======================== table ======================== */
+  .carts-container {
+    @apply my-14 mx-5 md:mx-20;
+  }
+  table {
+    @apply w-full text-center my-10;
+  }
+  table th,
+  td {
+    @apply border-y py-3;
+  }
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  .product-img-container {
+    @apply w-20 h-20 rounded-full overflow-hidden p-3 bg-white;
+  }
+  .product-img {
+    @apply w-full h-full object-contain;
+  }
+  .btn-showUpdateForm {
+    @apply rounded-md px-2 py-1 mx-5 font-medium bg-yellow-500;
+  }
 }

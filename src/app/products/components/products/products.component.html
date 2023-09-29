@@ -1,83 +1,7 @@
 <main class="carts-container">
-  <button
-    type="button"
-    class="btn-addProduct"
-    *ngIf="isProductFormHidden"
-    (click)="isProductFormHidden = false"
-  >
+  <button type="button" class="btn-addProduct" (click)="openDialog()">
     Add product
   </button>
-  <form
-    class="modalForm"
-    [formGroup]="productForm"
-    *ngIf="!isProductFormHidden"
-  >
-    <section class="modalForm-data">
-      <label for="title">Title</label><br />
-      <input
-        type="text"
-        id="title"
-        placeholder="title"
-        formControlName="title"
-      />
-    </section>
-    <section class="modalForm-data">
-      <label for="price">Price</label><br />
-      <input
-        type="number"
-        id="price"
-        placeholder="price"
-        formControlName="price"
-      />
-    </section>
-    <section class="modalForm-data">
-      <label for="category">Category</label><br />
-      <select id="category" formControlName="category">
-        <option *ngFor="let category of categories" [value]="category">
-          {{ category }}
-        </option>
-      </select>
-    </section>
-
-    <section class="modalForm-data">
-      <label for="image">Image</label><br />
-      <img
-        src="{{ base64 }}"
-        alt=""
-        class="h-20 w-full object-cover"
-        *ngIf="base64"
-      />
-      <input
-        type="file"
-        id="image"
-        placeholder="image"
-        (change)="getImagePath($event)"
-      />
-    </section>
-    <section class="modalForm-data">
-      <label for="description">Description</label><br />
-      <textarea id="description" formControlName="description"></textarea>
-    </section>
-
-    <button
-      type="submit"
-      class="btn-addProduct"
-      (click)="createProduct()"
-      [disabled]="!productForm.valid"
-      *ngIf="!isUpdateForm"
-    >
-      Add product
-    </button>
-    <button
-      type="submit"
-      class="btn-updateProduct"
-      (click)="updateProduct()"
-      [disabled]="!productForm.valid"
-      *ngIf="isUpdateForm"
-    >
-      Update product
-    </button>
-  </form>
   <div class="overflow-auto">
     <table>
       <tr>
@@ -100,7 +24,7 @@
           <button
             type="button"
             class="btn-showUpdateForm"
-            (click)="showUpdateForm(product)"
+            (click)="openDialog(product)"
           >
             Update
           </button>

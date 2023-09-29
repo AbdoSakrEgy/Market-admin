@@ -1,0 +1,68 @@
+<form class="modalForm" [formGroup]="productForm">
+  <section class="modalForm-data">
+    <label for="title">Title</label><br />
+    <input type="text" id="title" placeholder="title" formControlName="title" />
+  </section>
+  <section class="modalForm-data">
+    <label for="price">Price</label><br />
+    <input
+      type="number"
+      id="price"
+      placeholder="price"
+      formControlName="price"
+    />
+  </section>
+  <section class="modalForm-data">
+    <label for="category">Category</label><br />
+    <select id="category" formControlName="category">
+      <option *ngFor="let category of data.categories" [value]="category">
+        {{ category }}
+      </option>
+    </select>
+  </section>
+
+  <section class="modalForm-data">
+    <label for="image">Image</label><br />
+    <img
+      src="{{ base64 }}"
+      alt=""
+      class="h-20 w-full object-cover"
+      *ngIf="base64"
+    />
+    <input
+      type="file"
+      id="image"
+      placeholder="image"
+      (change)="getImagePath($event)"
+    />
+  </section>
+  <section class="modalForm-data">
+    <label for="description">Description</label><br />
+    <textarea id="description" formControlName="description"></textarea>
+  </section>
+
+  <button
+    type="submit"
+    [class]="{
+      'btn-addProduct': productForm.valid,
+      'btn-disapled': !productForm.valid
+    }"
+    (click)="createProduct()"
+    [disabled]="!productForm.valid"
+    *ngIf="!data.isUpdateForm"
+  >
+    Add product
+  </button>
+  <button
+    type="submit"
+    [class]="{
+      'btn-updateProduct': productForm.valid,
+      'btn-disapled': !productForm.valid
+    }"
+    (click)="updateProduct()"
+    [disabled]="!productForm.valid"
+    *ngIf="data.isUpdateForm"
+  >
+    Update product
+  </button>
+</form>

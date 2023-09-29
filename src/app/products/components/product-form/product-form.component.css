@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer components {
+  .btn-addProduct {
+    @apply rounded-md p-2 font-medium text-xl bg-green-500 text-white;
+  }
+  .btn-updateProduct {
+    @apply rounded-md p-2 font-semibold text-xl bg-yellow-500 text-white;
+  }
+  .btn-disapled {
+    @apply rounded-md p-2 font-medium text-xl bg-gray-300 text-white;
+  }
+  .modalForm {
+    @apply flex flex-col flex-wrap gap-5 p-5;
+  }
+  .modalForm-sec {
+    @apply md:flex flex-col justify-between gap-5 flex-wrap mb-10;
+  }
+  .modalForm-data input,
+  select {
+    @apply border px-3 py-1 rounded-md outline-none w-full;
+  }
+  textarea {
+    @apply border px-3 py-1 rounded-md outline-none w-full h-36 resize-none;
+  }
+  .modalForm-data img {
+    @apply object-contain;
+  }
+}
