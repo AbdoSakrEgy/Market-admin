@@ -10,3 +10,19 @@
     @apply font-bold text-lg hover:cursor-pointer;
   }
 }
+
+/* .triangle-right {
+  width: 0;
+  height: 0;
+  border-top: 26px solid transparent;
+  border-left: 100px solid #c92127;
+  border-bottom: 26px solid transparent;
+} */
+
+.triangle-right {
+  width: 0;
+  height: 0;
+  border-top: 30px solid transparent;
+  border-left: 100px solid #c92127;
+  border-bottom: 30px solid transparent;
+}
