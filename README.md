@@ -1,6 +1,8 @@
 # market-admin
-
 An angular application for control products of market apo, create new products, update products, delete products, read users carts.
+
+## Demo
+Check out the live demo of the "TasksApp-admin" project: [Live Demo](https://abdosakregy.github.io/market-admin/products)
 
 ## Features
 - Create new products
@@ -13,11 +15,7 @@ An angular application for control products of market apo, create new products, 
 - RESTful API
 - TailwindCSS
 
-## DEMO
-https://abdosakregy.github.io/market-admin/products
-
 ## Getting Started
-
 Follow these instructions to run the project locally on your machine:
 
 1. Download the angular project
