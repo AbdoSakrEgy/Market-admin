@@ -1,4 +1,4 @@
-# market-admin
+# Market-admin
 An angular application for control products of market apo, create new products, update products, delete products, read users carts.
 
 ## Demo
