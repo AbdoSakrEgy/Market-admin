@@ -2,7 +2,7 @@
 An angular application for control products of market apo, create new products, update products, delete products, read users carts.
 
 ## Demo
-Check out the live demo of the "market-admin" project: [Live Demo](https://market-admin-abdosakr.netlify.app/)
+Check out the live demo of the "market-admin" project: [Live Demo](https://market-admin-seven.vercel.app/products)
 
 ## Features
 - Create new products
